@@ -19,15 +19,17 @@ function draw() {
         objectDetector.detect(video, gotResult);
         
         for (i = 0; i < bla1.length; i++)
+        {
             document.getElementById("status").innerHTML = "Status : Object Detected";
         document.getElementById("number_of_objects").innerHTML = "No. of objects detected are : " + bla1.length;
         fill("#FF0000");
         percent = floor(bla1[i].confidence * 100);
           text(bla1[i].label + " " + percent + "%", bla1[i].x + 15, bla1[i].y + 15);
-        nofill();
+        noFill();
         stroke("#FF0000");
         rect(bla1[i].x , bla1[i].y , bla1[i].width , bla1[i].height);
     }
+}
 }
 
 function gotResult(error, results) {
